@@ -16,7 +16,7 @@ textarea#gdsDes { width:400px; height:180px; }
 </head>
 <body>
 <h1>판매상품 폼</h1>
-<form action="insert.do" method="post">
+<form action="insert.do" method="post" enctype="multipart/form-data">
 
 <div class="inputArea">
  <label for="gdsName">판매자</label>
@@ -31,6 +31,14 @@ textarea#gdsDes { width:400px; height:180px; }
 <div class="inputArea">
  <label for="gdsPrice">상품가격</label>
  <input type="text" id="price" name="price" />
+</div>
+
+<div class="image-container">
+ <label for="gdsImg">상품 이미지</label>
+ 
+			<img style="width: 100px;" id="preview-image" src="https://dummyimage.com/500x500/ffffff/000000.png&text=preview+image">
+            <input style="display: block;" type="file" id="input-image" name="filename">
+
 </div>
 
 <div class="inputArea">
