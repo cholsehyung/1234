@@ -1,9 +1,13 @@
 package com.hk.board;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
+import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,10 +17,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.hk.board.dtos.HkDto;
 import com.hk.board.service.HkService;
 import com.hk.board.service.IHkService;
+import com.hk.board.utils.UploadFileUtils;
 
 /**
  * Handles requests for the application home page.
@@ -28,6 +34,9 @@ public class HomeController {
 	
 	@Autowired
 	private IHkService hkService;
+	
+	@Resource(name="uploadPath")
+	private String uploadPath;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
@@ -75,10 +84,35 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/insert.do", method = {RequestMethod.GET,RequestMethod.POST})
-	public String insert(Locale locale, Model model, HkDto dto) {
+	public String insert(Locale locale, Model model, HkDto dto, MultipartFile file) {
 		logger.info("판매상품올리기", locale);
 		
-		boolean isS = hkService.insertBoard(dto);
+		String imgUploadPath = uploadPath + File.separator + "imgUpload";
+		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
+		String fileName = null;
+
+		if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
+		 try {
+			fileName =  UploadFileUtils.fileUpload(imgUploadPath, file.getOriginalFilename(), file.getBytes(), ymdPath);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		} else {
+		 fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
+		}
+
+		dto.setImg_url(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		
+		
+		boolean isS = hkService.insertBoard(new HkDto(0, dto.getId(), 
+				dto.getName(), dto.getPrice(), dto.getContent(), 
+				dto.getImg_url(), null));
+		
+		
 		if(isS) {
 			return "redirect:boardlist.do";
 		} else {

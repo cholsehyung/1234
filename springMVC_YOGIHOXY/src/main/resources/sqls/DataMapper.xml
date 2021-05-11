@@ -42,7 +42,7 @@
 	<select id="getAllList" resultMap="HkDtoMap" >
 		<![CDATA[
 			SELECT SEQ,ID,NAME,PRICE,CONTENT,IMG_URL,REGDATE 
-			FROM DETAIL WHERE SEQ < 10
+			FROM DETAIL
 			ORDER BY REGDATE DESC		
 		]]>
 	</select>
@@ -56,23 +56,23 @@
 	
 	<insert id="insertboard" parameterType="HkDto">
 		<![CDATA[
-		INSERT INTO DETAIL 
+		INSERT INTO DETAIL (SEQ, ID, NAME, PRICE, CONTENT, IMG_URL, REGDATE)
 		VALUES (DETAIL_SEQ.NEXTVAL, #{id} , #{name} , #{price}, #{content}, #{img_url} ,SYSDATE) 
 		]]>
 	</insert>
 
 	<update id="updateboard" parameterType="HkDto">
-		UPDATE HKBOARD SET 
+		UPDATE DETAIL SET 
 		TITLE=#{title}, CONTENT=#{content}, REGDATE=SYSDATE 
 		WHERE SEQ=#{seq} 
 	</update>
 	
 	<delete id="deleteboard" parameterType="int">
-		DELETE FROM HKBOARD WHERE SEQ=#{seq}
+		DELETE FROM DETAIL WHERE SEQ=#{seq}
 	</delete>
 	
 	<delete id="muldel" parameterType="Map">
-		DELETE FROM HKBOARD WHERE SEQ IN 
+		DELETE FROM DETAIL WHERE SEQ IN 
 		<foreach collection="chks" item="i" separator="," open="(" close=")">
 			#{i}
 		</foreach>

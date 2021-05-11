@@ -38,7 +38,8 @@ textarea#gdsDes { width:400px; height:180px; }
  		<td>
  			<div class="image-container">
  			<img style="width: 100px;" id="preview-image" src="https://dummyimage.com/500x500/ffffff/000000.png&text=preview+image">
- 			<input style="display: block;" type="file" id="img_url" name="img_url"></td>
+ 			<%=request.getRealPath("/") %>
+ 			<input style="display: block;" type="file" id="img_url" name="file"></td>
  			</div>
 	</tr>
 	
@@ -74,7 +75,7 @@ textarea#gdsDes { width:400px; height:180px; }
 	        }
 	        // reader가 이미지 읽도록 하기
 	        reader.readAsDataURL(input.files[0])
-	    }
+	    } 
 	}
 	// input file에 change 이벤트 부여
 	const inputImage = document.getElementById("img_url")
