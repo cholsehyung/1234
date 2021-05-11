@@ -27,26 +27,5 @@
    
    <context:component-scan base-package="com.hk.board" />
    
-   <!-- 
-      multipart 요청정보를 받기 위한 multipartResolver객체 선언
-      maxUploadSize : 최대 업로드 가능 바이트 크기 설정
-      maxInMemorySize : 임시 파일 생성을 위한 메모리 보관 크기 설정
-      
-       -->
-   <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-      <beans:property name="maxUploadSize" value="580981"/>
-      <beans:property name="maxInMemorySize" value="1048000"/>
-   </beans:bean>
-   <tx:advice id="txAdvice" transaction-manager="transactionManager">
-      <tx:attributes>
-         <tx:method name="multiFileInsert" propagation="REQUIRED" rollback-for="Exception"/>
-      </tx:attributes>
-   </tx:advice>
-   
-   <aop:config>
-      <aop:pointcut expression="execution(* com.hk.board.service.*Service.*Insert(..))" 
-      id="serviceTransaction"/>
-      <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceTransaction"/>
-   </aop:config>
    
 </beans:beans>
