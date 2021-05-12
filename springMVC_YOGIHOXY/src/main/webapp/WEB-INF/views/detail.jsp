@@ -182,16 +182,6 @@
 </li>
 </ul>
 </div>
-<div class="social-share">
-<h4>Share Ad</h4>
-<ul>
-<li><a href="javascript:void(0)" class="facebook"><i class="lni lni-facebook-filled"></i></a></li>
-<li><a href="javascript:void(0)" class="twitter"><i class="lni lni-twitter-original"></i></a></li>
-<li><a href="javascript:void(0)" class="google"><i class="lni lni-google"></i></a></li>
-<li><a href="javascript:void(0)" class="linkedin"><i class="lni lni-linkedin-original"></i></a></li>
-<li><a href="javascript:void(0)" class="pinterest"><i class="lni lni-pinterest"></i></a></li>
-</ul>
-</div>
 </div>
 </div>
 </div>
@@ -281,46 +271,6 @@ which don't look even slightly believable.
 </div>
 <div class="col-lg-4 col-md-5 col-12">
 <div class="item-details-sidebar">
-
-<div class="single-block author">
-<h3>Author</h3>
-<div class="content">
-<img src="assets/images/testimonial/testi3.jpg" alt="#">
-<h4>Miliya Jessy</h4>
-<span>Member Since May 15,2023</span>
-<a href="javascript:void(0)" class="see-all">See All Ads</a>
-</div>
-</div>
-
-
-<div class="single-block contant-seller comment-form ">
-<h3>Contact Seller</h3>
-<form action="#" method="POST">
-<div class="row">
-<div class="col-12">
-<div class="form-box form-group">
-<input type="text" name="name" class="form-control form-control-custom" placeholder="Your Name" />
-</div>
-</div>
-<div class="col-12">
-<div class="form-box form-group">
-<input type="email" name="email" class="form-control form-control-custom" placeholder="Your Email" />
-</div>
-</div>
-<div class="col-12">
-<div class="form-box form-group">
-<textarea name="#" class="form-control form-control-custom" placeholder="Your Message"></textarea>
-</div>
-</div>
-<div class="col-12">
-<div class="button">
-<button type="submit" class="btn">Send Message</button>
-</div>
-</div>
-</div>
-</form>
-</div>
-
 
 <div class="single-block ">
 <h3>Location</h3>
@@ -521,6 +471,38 @@ function seoul(){
 </div>
 </div>
 </div>
+
+
+<div class="single-block contant-seller comment-form ">
+<h3>Contact Seller</h3>
+<form action="#" method="POST">
+<div class="row">
+<div class="col-12">
+<div class="form-box form-group">
+<input type="text" name="name" class="form-control form-control-custom" placeholder="Your Name" />
+</div>
+</div>
+<div class="col-12">
+<div class="form-box form-group">
+<input type="email" name="email" class="form-control form-control-custom" placeholder="Your Email" />
+</div>
+</div>
+<div class="col-12">
+<div class="form-box form-group">
+<textarea name="#" class="form-control form-control-custom" placeholder="Your Message"></textarea>
+</div>
+</div>
+<div class="col-12">
+<div class="button">
+<button type="submit" class="btn">Send Message</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+
+
+
 </div>
 </div>
 </div>

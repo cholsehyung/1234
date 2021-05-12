@@ -26,6 +26,7 @@
 		<result column="CONTENT" property="content" />
 		<result column="IMG_URL" property="img_url" />
 		<result column="REGDATE" property="regdate" />
+		<result column="CATEGORY" property="category" />
 <!-- 		<collection property="dtoMap" resultMap="dtoMap"></collection> -->
 	</resultMap>
 
@@ -37,11 +38,12 @@
 		<result column="CONTENT" property="content" />
 		<result column="IMG_URL" property="img_url" />
 		<result column="REGDATE" property="regdate" />
+		<result column="CATEGORY" property="category" />
 	</resultMap>
 	
 	<select id="getAllList" resultMap="HkDtoMap" >
 		<![CDATA[
-			SELECT SEQ,ID,NAME,PRICE,CONTENT,IMG_URL,REGDATE 
+			SELECT SEQ,ID,NAME,PRICE,CONTENT,IMG_URL,REGDATE , CATEGORY
 			FROM DETAIL
 			ORDER BY REGDATE DESC		
 		]]>
@@ -49,21 +51,21 @@
 	
 	<select id="getboard" parameterType="int" resultType="HkDto">
 		<![CDATA[
-			SELECT SEQ,ID,NAME,PRICE,CONTENT,IMG_URL,REGDATE 
+			SELECT SEQ,ID,NAME,PRICE,CONTENT,IMG_URL,REGDATE, CATEGORY
 			FROM DETAIL WHERE SEQ = #{seq}
 		]]>
 	</select>
 	
 	<insert id="insertboard" parameterType="HkDto">
 		<![CDATA[
-		INSERT INTO DETAIL (SEQ, ID, NAME, PRICE, CONTENT, IMG_URL, REGDATE)
-		VALUES (DETAIL_SEQ.NEXTVAL, #{id} , #{name} , #{price}, #{content}, #{img_url} ,SYSDATE) 
+		INSERT INTO DETAIL (SEQ, ID, NAME, PRICE, CONTENT, IMG_URL, REGDATE, CATEGORY)
+		VALUES (DETAIL_SEQ.NEXTVAL, #{id} , #{name} , #{price}, #{content}, #{img_url} ,SYSDATE, #{catecory}) 
 		]]>
 	</insert>
 
 	<update id="updateboard" parameterType="HkDto">
 		UPDATE DETAIL SET 
-		TITLE=#{title}, CONTENT=#{content}, REGDATE=SYSDATE 
+		NAME=#{name}, CONTENT=#{content}, REGDATE=SYSDATE 
 		WHERE SEQ=#{seq} 
 	</update>
 	

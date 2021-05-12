@@ -23,9 +23,24 @@ textarea#gdsDes { width:400px; height:180px; }
  		<td><input type="text" id="id" name="id" /></td>
 	</tr>
 	
+<!-- 	<tr> -->
+<!-- 		<th>카테고리</th> -->
+<!-- 		<td><select name="category" id="category"> -->
+<!-- 			<option value="1">가구/인테리어</option> -->
+<!-- 			<option value="2">디지털/가전</option> -->
+<!-- 			<option value="3">식품</option> -->
+<!-- 			<option value="4">남성의류/잡화</option> -->
+<!-- 			<option value="5">여성의류/잡화</option> -->
+<!-- 			<option value="6">뷰티/미용</option> -->
+<!-- 			<option value="7">기타</option> -->
+<!-- 		</select> -->
+<!--  		</td> -->
+<!-- 	</tr> -->
+	
 	<tr>
 		<th>상품명</th>
- 		<td><input type="text" id="name" name="name" /></td>
+ 		<td>
+ 		<input type="text" id="name" name="name" /></td>
 	</tr>
 	
 	<tr>

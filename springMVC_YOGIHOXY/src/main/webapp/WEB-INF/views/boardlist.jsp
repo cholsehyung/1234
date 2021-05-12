@@ -80,6 +80,7 @@
 		<th>번호</th>
 		<th>판매자</th>
 		<th>사진</th>
+<!-- 		<th>카테고리</th> -->
 		<th>상품명</th>
 		<th>가격</th>
 		<th>작성일</th>
@@ -96,6 +97,7 @@
 					<td align="center"><%=dto.getSeq() %></td>
 					<td align="center"><%=dto.getId() %></td>
 					<td align="center"><img src="<%=request.getContextPath()%><%=dto.getImg_url() %>" class="img_url"></td>
+<%-- 					<td align="center"><%=dto.getCatecory() %></td> --%>
 					<td align="center"><a href="detail.do?seq=<%=dto.getSeq() %>"><%=dto.getName() %></a></td>
 					<td align="center"><%=dto.getPrice() %></td>
 					<td><fmt:formatDate value="<%=dto.getRegdate() %>" pattern="YYYY년MM월dd일 hh:mm:ss"/> </td>
@@ -107,7 +109,7 @@
 	<tr>
 		<td colspan="7" align="center">
 			<a href="insertboard.do">상품 글 올리기</a>
-			<a href="./">메인</a>
+			<a href=".">메인</a>
 			<input type="submit" value="삭제">
 		</td>
 	</tr>

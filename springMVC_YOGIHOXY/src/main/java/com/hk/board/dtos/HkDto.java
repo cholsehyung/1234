@@ -10,12 +10,13 @@ public class HkDto {
 	private String content;
 	private String img_url;
 	private Date regdate;
+	private String catecory;
 	
 	public HkDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public HkDto(int seq, String id, String name, int price, String content, String img_url, Date regdate) {
+	public HkDto(int seq, String id, String name, int price, String content, String img_url, Date regdate, String catecory) {
 		super();
 		this.seq = seq;
 		this.id = id;
@@ -24,8 +25,9 @@ public class HkDto {
 		this.content = content;
 		this.img_url = img_url;
 		this.regdate = regdate;
+		this.catecory = catecory;
 	}
-	public HkDto(int seq, String id, String name, int price, String content, String img_url) {
+	public HkDto(int seq, String id, String name, int price, String content, String img_url, String catecory) {
 		super();
 		this.seq = seq;
 		this.id = id;
@@ -33,6 +35,7 @@ public class HkDto {
 		this.price = price;
 		this.content = content;
 		this.img_url = img_url;
+		this.catecory = catecory;
 	}
 	public int getSeq() {
 		return seq;
@@ -77,13 +80,18 @@ public class HkDto {
 		this.regdate = regdate;
 		
 	}
+	
+	public String getCatecory() {
+		return catecory;
+	}
+	public void setCatecory(String catecory) {
+		this.catecory = catecory;
+	}
 	@Override
 	public String toString() {
 		return "HkDto [seq=" + seq + ", id=" + id + ", name=" + name + ", price=" + price + ", content=" + content
-				+ ", img_url=" + img_url + ", regdate=" + regdate + "]";
+				+ ", img_url=" + img_url + ", regdate=" + regdate + ", catecory=" + catecory + "]";
 	}
-
-
 
 	
 }

@@ -764,10 +764,10 @@ Google Play
 <i class="lni lni-chevron-up"></i>
 </a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/tiny-slider.js"></script>
-<script src="assets/js/glightbox.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/wow.min.js"></script>
+<script src="resources/js/tiny-slider.js"></script>
+<script src="resources/js/glightbox.min.js"></script>
+<script src="resources/js/main.js"></script>
 </body>
 </html>
