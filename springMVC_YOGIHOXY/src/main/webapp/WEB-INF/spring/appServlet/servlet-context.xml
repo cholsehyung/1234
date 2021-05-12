@@ -29,7 +29,8 @@
    
    <!-- 업로드 패스 설정 --> 
 	<beans:bean class="java.lang.String" id="uploadPath">
- 	<beans:constructor-arg value="C:\Users\USER\git\1234\springMVC_YOGIHOXY\src\main\webapp\resources" />
+ 	<!--<beans:constructor-arg value="C:\Users\USER\git\1234\springMVC_YOGIHOXY\src\main\webapp\resources" /> -->
+ 	<beans:constructor-arg value="C:\Users\chols\git\1234\springMVC_YOGIHOXY\src\main\webapp\resources" />
 	</beans:bean>
 
 	<!-- 일반 파일 업로드 경로 -->

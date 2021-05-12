@@ -6,6 +6,9 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 <head>
+<style>
+.img_url {width:600px; height:250px;}
+</style>
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <title>Ads Details - ClassiGrids Classified Ads and Listing Website Template</title>
@@ -23,6 +26,7 @@
 <link rel="stylesheet" href="resources/css/tiny-slider.css" />
 <link rel="stylesheet" href="resources/css/glightbox.min.css" />
 <link rel="stylesheet" href="resources/css/main.css" />
+
 </head>
 <%
  	List<HkDto> list = (List<HkDto>) request.getAttribute("list"); 
@@ -130,6 +134,7 @@
 <div class="col-lg-6 col-md-12 col-12">
 <div class="product-images">
 <main id="gallery">
+<img src="<%=request.getContextPath()%>${dto.img_url}" id="img_url" class="img_url" alt="#">
 </main>
 </div>
 </div>

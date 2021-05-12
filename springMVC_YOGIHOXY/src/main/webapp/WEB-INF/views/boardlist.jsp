@@ -95,7 +95,7 @@
 					<td align="center"><input type="checkbox" name="chk" value="<%=dto.getSeq() %>"/></td>
 					<td align="center"><%=dto.getSeq() %></td>
 					<td align="center"><%=dto.getId() %></td>
-					<td align="center"><img src="${dto.img_url }" class="img_url"></td>
+					<td align="center"><img src="<%=request.getContextPath()%><%=dto.getImg_url() %>" class="img_url"></td>
 					<td align="center"><a href="detail.do?seq=<%=dto.getSeq() %>"><%=dto.getName() %></a></td>
 					<td align="center"><%=dto.getPrice() %></td>
 					<td><fmt:formatDate value="<%=dto.getRegdate() %>" pattern="YYYY년MM월dd일 hh:mm:ss"/> </td>
